@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Harborview Capital Partners — Clarity in Lending. Certainty of Execution.</title>
-<meta name="description" content="Harborview Capital Partners is a full-service commercial real estate finance, equity and advisory firm — debt, equity and advisory across multifamily, healthcare, hospitality, office and retail.">
+<title>Harborview Capital Partners | Clarity in Lending. Certainty of Execution.</title>
+<meta name="description" content="Harborview Capital Partners is a full-service commercial real estate finance, equity and advisory firm: debt, equity and advisory across multifamily, healthcare, hospitality, office and retail.">
 <meta name="theme-color" content="#081C31">
 <meta property="og:title" content="Harborview Capital Partners">
 <meta property="og:description" content="Clarity in lending. Certainty of execution. Full-service commercial real estate finance, equity and advisory.">
@@ -317,6 +317,34 @@ header.on .nav{height:66px}
 .formnote.ok{color:#337ACC}
 .formnote.bad{color:#9B3A31}
 
+/* ————— connect on dark (keeps the dark / light rhythm) ————— */
+#contact .field label{color:var(--drift)}
+#contact .field input,#contact .field select,#contact .field textarea{color:var(--foam);border-bottom-color:var(--ln-dark)}
+#contact .field select option{color:var(--night)}
+#contact .field :is(input,select,textarea):focus{border-color:var(--teak)}
+#contact .field textarea::placeholder{color:rgba(201,208,214,.55)}
+#contact .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' fill='none'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23C9D0D6'/%3E%3C/svg%3E")}
+#contact .t2{color:#fff}
+
+/* ————— bigger signature lines ————— */
+#about .t2.t2-sub,#transactions .t2.t2-sub{font-size:clamp(30px,3.5vw,50px);line-height:1.12}
+
+#about .t2.t2-sub{white-space:nowrap;font-size:min(3.4vw,54px)}
+@media (max-width:900px){#about .t2.t2-sub{white-space:normal;font-size:clamp(28px,7vw,40px)}}
+
+
+/* ————— Our process: titles in caps ————— */
+.tenets .tenet .k{text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;font-size:clamp(22px,2.2vw,32px);margin-bottom:14px}
+.tenets .tenet .t4{font-family:var(--serif);font-weight:400;font-size:clamp(19px,1.6vw,23px);line-height:1.25;color:var(--night);margin-bottom:12px}
+.tenets .tenet p{color:var(--slate)}
+@media (max-width:900px){.tenets .tenet .k{white-space:normal}}
+
+/* ————— one type system: blue serif title / serif subhead / grey sans body ————— */
+.svc-grid .svc{min-height:0}
+.svc-grid .svc .no{margin-bottom:14px}
+.svc-grid .svc .t3{font-family:var(--serif);font-weight:400;font-size:clamp(19px,1.6vw,23px);line-height:1.25;color:#fff;margin:0 0 12px}
+.svc-grid .svc p,.tenets .tenet p,.aidx .arow p{font-size:17px;line-height:1.62}
+
 /* ————— footer ————— */
 footer{background:var(--night);overflow:clip}
 .foot-mark{
@@ -513,20 +541,16 @@ footer{background:var(--night);overflow:clip}
   .tc-row{grid-template-columns:1fr;gap:5px}
   .tc-track{order:3}
 }
-/* ————— paper texture on the light chapters ————— */
-.on-light{position:relative;isolation:isolate}
+/* ————— water texture on the light chapters ————— */
+.on-light{position:relative;isolation:isolate;background:#DEE9F3}
 .on-light::before{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='210' viewBox='0 0 420 210' fill='none' stroke='%23081C31' stroke-width='.8' stroke-opacity='.04' stroke-linecap='round'%3E%3Cpath d='M-420 18C-315 3 -315 3 -210 18S-105 32 0 18M0 18C105 3 105 3 210 18S315 32 420 18M420 18C525 3 525 3 630 18S735 32 840 18'/%3E%3Cpath d='M-575 52C-470 34 -470 34 -365 52S-260 71 -155 52M-155 52C-50 34 -50 34 55 52S160 71 265 52M265 52C370 34 370 34 475 52S580 71 685 52'/%3E%3Cpath d='M-731 88C-626 65 -626 65 -521 88S-416 110 -311 88M-311 88C-206 65 -206 65 -101 88S4 110 109 88M109 88C214 65 214 65 319 88S424 110 529 88'/%3E%3Cpath d='M-466 122C-361 108 -361 108 -256 122S-151 137 -46 122M-46 122C59 108 59 108 164 122S269 137 374 122M374 122C479 108 479 108 584 122S689 137 794 122'/%3E%3Cpath d='M-622 158C-517 139 -517 139 -412 158S-307 176 -202 158M-202 158C-97 139 -97 139 8 158S113 176 218 158M218 158C323 139 323 139 428 158S533 176 638 158'/%3E%3Cpath d='M-777 192C-672 170 -672 170 -567 192S-462 215 -357 192M-357 192C-252 170 -252 170 -147 192S-42 215 63 192M63 192C168 170 168 170 273 192S378 215 483 192'/%3E%3C/svg%3E");background-size:420px 210px;
-  opacity:1;mix-blend-mode:multiply;
-  -webkit-mask-image:linear-gradient(168deg,#000 0%,#000 38%,rgba(0,0,0,.45) 58%,transparent 78%);
-  mask-image:linear-gradient(168deg,#000 0%,#000 38%,rgba(0,0,0,.45) 58%,transparent 78%);
+  background-image:url("img/water-light.webp"),url("img/water-shade.webp");
+  background-size:480px 480px;background-repeat:repeat;
 }
 .on-light::after{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(130% 75% at 15% -5%,rgba(255,255,255,.95),rgba(255,255,255,0) 62%),
-    linear-gradient(168deg,rgba(226,235,243,0) 42%,rgba(198,214,230,.72) 100%);
+  background:linear-gradient(180deg,rgba(222,233,243,0) 60%,rgba(200,217,233,.45) 100%);
 }
 /* ————— hero: centered wordmark, blurred ground ————— */
 .hero-core{text-align:center}
@@ -683,6 +707,53 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
 .fc-amt{padding-top:12px;font-size:clamp(21px,1.8vw,26px)}
 .fc-tag2{margin-bottom:12px}
 .social{flex-wrap:wrap;gap:14px 22px}
+
+/* ————— footer: centered, no paragraph ————— */
+footer .fcols{grid-template-columns:repeat(3,auto);justify-content:center;column-gap:clamp(56px,9vw,150px);row-gap:clamp(30px,3.4vw,44px);text-align:center}
+footer .fcols .about-f{grid-column:1/-1}
+footer .fcols .social{justify-content:center;margin-top:0}
+footer .fbase{justify-content:center;text-align:center}
+@media (max-width:700px){footer .fcols{grid-template-columns:1fr}}
+
+/* ————— service cards: title sinks into the tide ————— */
+.svc-x{--tide:#1D4A7E}
+.svc-x .tide::after{background:
+  linear-gradient(to bottom,var(--tide) 0%,var(--tide) 30%,rgba(16,46,82,.9) 62%,rgba(6,24,41,.96) 100%),
+  radial-gradient(circle 280px at var(--mx,50%) var(--my,40%),rgba(158,219,255,.12),rgba(158,219,255,0) 68%)}
+.svc-x .wv{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 18' preserveAspectRatio='none'%3E%3Cpath d='M0 10Q100 2 200 10T400 10V18H0Z' fill='%231D4A7E'/%3E%3C/svg%3E")}
+.svc-x .no{transition:color .5s .35s}
+@media (hover:hover){
+  .svc-grid .svc-x:hover .no{color:var(--tide)}
+}
+
+/* ————— About: Top 10 between two lines ————— */
+.t10{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:2em;padding:16px 0;border-top:1px solid var(--teak);border-bottom:1px solid var(--teak)}
+.t10-row{display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap}
+.t10-k{font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--night);font-variation-settings:"wdth" 118}
+.t10-n{font-family:"Instrument Serif",Georgia,serif;font-size:44px;line-height:.8;color:var(--teak)}
+.t10-p{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:18px;color:var(--slate)}
+
+/* ————— header: white sailboat icon, centered menu ————— */
+.hv-brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.hv-icon{height:44px;width:auto;display:block}
+.hv-word{height:32px;width:auto;display:block}
+header.on .hv-icon{height:36px}
+header.on .hv-word{height:26px}
+.hv-brand img{transition:height .5s var(--ease)}
+header .nav{gap:clamp(20px,3vw,48px)}
+header .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+header .menu{margin-left:0;justify-self:center}
+header .nav-cta{justify-self:end}
+@media (max-width:880px){header .nav{grid-template-columns:auto auto;justify-content:space-between}}
+
+/* ————— hero: grey lede in the label font, compact rates bar ————— */
+.hero-between .hero-lede{font-family:var(--sans);font-variation-settings:"wdth" 112;font-size:clamp(16px,1.2vw,18px);letter-spacing:.04em;line-height:1.7;color:#A3AEB8;max-width:50ch}
+.hero-core .hero-between{margin:clamp(22px,2.6vw,36px) 0 0}
+.tkr .tk{padding:clamp(8px,1vw,12px) clamp(6px,.8vw,12px)}
+.tkr .tk span{font-size:11px;margin-bottom:5px}
+.tkr .tk b{font-size:clamp(15px,1.4vw,19px)}
+.tkr .tk i.tkd{font-size:11px;margin-top:4px}
+.tkr .tkr-note{font-size:11px;padding:7px 14px}
 </style>
 </head>
 <body>
@@ -690,10 +761,13 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
 
 <header id="hdr">
   <div class="wrap nav">
+    <a class="hv-brand" href="#top" aria-label="Harborview Capital Partners, back to top">
+      <img class="hv-icon" src="img/hv-icon-white.svg" alt="Harborview Capital Partners" width="442" height="510">
+    </a>
     <nav class="menu" id="menu" aria-label="Primary">
       <a href="#about">About Us</a>
-      <a href="#process">Our Process</a>
       <a href="#what">What We Do</a>
+      <a href="#process">Our Process</a>
       <a href="#transactions">Closed Deals</a>
       <a href="#directory">Directory</a>
     </nav>
@@ -718,18 +792,15 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
   </div>
   <div class="hero-core">
     <div class="wrap">
-      <div class="hero-kick gs-fade"><p class="sig" style="color:#C9D0D6">Top ten HUD lender since 2013 · Harborview and its partners</p></div>
+      <div class="hero-kick gs-fade"><p class="sig" style="color:#C9D0D6">Top 10 HUD lender since 2013 · Harborview and its partners</p></div>
       <h1 class="hero-mark">
         <img src="img/logo-blue-light.png?v=2" alt="Harborview Capital Partners" width="1013" height="256" fetchpriority="high">
       </h1>
+      <div class="hero-between"><p class="hero-lede gs-fade">A full-service commercial real estate finance, equity and advisory firm. Providing unparalleled access to capital across every asset class.</p></div>
     </div>
   </div>
   <div class="hero-foot">
     <div class="wrap">
-      <div class="hero-between">
-        <p class="hero-lede gs-fade">Harborview Capital Partners is a full-service commercial real estate finance, equity and advisory firm. Providing unparalleled access to capital across every asset class.</p>
-        <a class="pill gs-fade" href="#contact"><span>Connect</span></a>
-      </div>
       <div class="tkr" id="tkr" aria-label="Live interest rates">
         <div class="tkr-row" id="tkrRow">
           <button class="tk" data-r="sofr"><span>SOFR</span><b>—</b><i class="tkd"></i></button>
@@ -755,9 +826,84 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
     </figure>
     <div>
       <p class="sig sig-lg gs-fade">About us</p>
-      <h2 class="t2 t2-sub"><span class="msk"><span>An innovative <i>partner</i>,</span></span><span class="msk"><span>not a broker.</span></span></h2>
-      <p class="body-l gs-fade">Harborview Capital Partners is a full-service commercial real estate finance, equity and advisory firm. Our mission is to be an innovative partner with our clients by providing unparalleled access to debt, equity and advisory services for all of the commercial real estate asset classes — multifamily, healthcare, office, retail, industrial and hospitality.</p>
-      <p class="pull gs-fade" style="margin-top:1.1em">Top ten HUD lender in the country since 2013. Harborview and its partners.</p>
+      <h2 class="t2 t2-sub"><span class="msk"><span>An innovative&nbsp;<i>partner</i>, not a broker.</span></span></h2>
+      <p class="body-l gs-fade">Harborview Capital Partners is a full-service commercial real estate finance, equity and advisory firm. Our mission is to be an innovative partner with our clients by providing unparalleled access to debt, equity and advisory services for all of the commercial real estate asset classes: multifamily, healthcare, office, retail, industrial and hospitality.</p>
+      <div class="t10 gs-fade" role="img" aria-label="Top 10 HUD lender in the country since 2013, Harborview and its partners"><span class="t10-row"><span class="t10-k">Top</span><span class="t10-n">10</span><span class="t10-k">HUD lender in the country since 2013</span></span><span class="t10-p">Harborview and its partners</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ WHAT WE DO ═════════ -->
+<section class="on-pine chapter" id="what">
+  <div class="wrap">
+    <div class="wwd-head">
+      <div>
+        <p class="sig sig-lg gs-fade" style="margin-bottom:22px">What we do</p>
+        <h2 class="disp wwd-big"><span class="msk"><span class="wwd-blue">Debt. Equity. Advisory.</span></span><span class="msk"><span class="wwd-white">We do it all.</span></span></h2>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc gs-up svc-x"><span class="tide" aria-hidden="true" style="background-image:url(img/svc-1.webp)"><i class="wv"></i></span>
+        <span class="no">Debt</span>
+        <h3 class="t3">Customized financing</h3>
+        <p>Long-standing relationships with all major real estate capital providers. From HUD and agency to bank, bridge and CMBS, we find the right lender and structure the right loan for every deal.</p>
+      </article>
+      <article class="svc gs-up svc-x"><span class="tide" aria-hidden="true" style="background-image:url(img/svc-2.webp)"><i class="wv"></i></span>
+        <span class="no">Equity</span>
+        <h3 class="t3">Capital aligned to the horizon</h3>
+        <p>Trusted relationships with institutional equity providers and private equity sources. We raise the equity required and make sure the provider is a productive match for a long&#8209;term relationship.</p>
+      </article>
+      <article class="svc gs-up svc-x"><span class="tide" aria-hidden="true" style="background-image:url(img/svc-3.webp)"><i class="wv"></i></span>
+        <span class="no">Advisory</span>
+        <h3 class="t3">Critical thinking, applied</h3>
+        <p>Helping clients navigate the unique challenges facing investors and operators with critical thinking and creativity. Our relationships with owners across every asset class open unique opportunities to grow their portfolios.</p>
+      </article>
+    </div>
+
+    <div class="caps gs-fade" id="sources">
+      <div class="caps-head"><p class="sig caps-k">Capital sources</p><p class="caps-note">Select a source to request its tear sheet.</p></div>
+      <div class="caps-row">
+        <a class="cap" href="#contact" data-sheet="HUD / FHA" aria-label="Request the HUD / FHA tear sheet"><span>HUD / FHA</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="Fannie Mae DUS" aria-label="Request the Fannie Mae DUS tear sheet"><span>Fannie Mae DUS</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="Freddie Mac" aria-label="Request the Freddie Mac tear sheet"><span>Freddie Mac</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="CMBS" aria-label="Request the CMBS tear sheet"><span>CMBS</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="Bank" aria-label="Request the Bank tear sheet"><span>Bank</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="Life Company" aria-label="Request the Life Company tear sheet"><span>Life Company</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="Bridge" aria-label="Request the Bridge tear sheet"><span>Bridge</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="Mezzanine" aria-label="Request the Mezzanine tear sheet"><span>Mezzanine</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+        <a class="cap" href="#contact" data-sheet="Equity" aria-label="Request the Equity tear sheet"><span>Equity</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(64px,8vw,110px)">
+      <p class="sig sig-lg gs-fade" style="margin-bottom:34px">Asset classes</p>
+      <div class="aidx">
+        <div class="arow gs-fade">
+          <h3 class="t3">Multifamily</h3>
+          <p>Creativity and expertise across conventional, affordable and student housing, leveraging lender relationships and decades of experience.</p>
+        </div>
+        <div class="arow gs-fade">
+          <h3 class="t3">Healthcare</h3>
+          <p>Billions arranged for skilled nursing, independent living, assisted living and memory care facilities across the country.</p>
+        </div>
+        <div class="arow gs-fade">
+          <h3 class="t3">Hospitality</h3>
+          <p>From limited service to full-service luxury hotels, with tailor-made financing built on a deep understanding of the industry.</p>
+        </div>
+        <div class="arow gs-fade">
+          <h3 class="t3">Office &amp; Mixed-Use</h3>
+          <p>Diverse financing solutions for mixed-use and office properties nationwide, structured around each asset's tenancy and story.</p>
+        </div>
+        <div class="arow gs-fade">
+          <h3 class="t3">Retail</h3>
+          <p>Strip centers, grocery-anchored and big-box anchored shopping centers, with unique financing solutions nationwide.</p>
+        </div>
+        <div class="arow gs-fade">
+          <h3 class="t3">Industrial</h3>
+          <p>Logistics, flex and self-storage assets, financed against the operating fundamentals that actually drive value.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -798,81 +944,6 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
   </div>
 </section>
 
-<!-- ═════════ WHAT WE DO ═════════ -->
-<section class="on-pine chapter" id="what">
-  <div class="wrap">
-    <div class="wwd-head">
-      <div>
-        <p class="sig sig-lg gs-fade" style="margin-bottom:22px">What we do</p>
-        <h2 class="disp wwd-big"><span class="msk"><span class="wwd-blue">Debt. Equity. Advisory.</span></span><span class="msk"><span class="wwd-white">We do it all.</span></span></h2>
-      </div>
-    </div>
-
-    <div class="svc-grid">
-      <article class="svc gs-up svc-x"><span class="tide" aria-hidden="true" style="background-image:url(img/svc-1.webp)"><i class="wv"></i></span>
-        <span class="no">Debt</span>
-        <h3 class="t3">Customized financing</h3>
-        <p>Long-standing relationships with all major real estate capital providers.</p>
-      </article>
-      <article class="svc gs-up svc-x"><span class="tide" aria-hidden="true" style="background-image:url(img/svc-2.webp)"><i class="wv"></i></span>
-        <span class="no">Equity</span>
-        <h3 class="t3">Capital aligned to the horizon</h3>
-        <p>Trusted relationships with institutional equity providers and private equity sources. We spend the time not just to raise the equity required, but to ensure the provider is a productive match for a long-term relationship.</p>
-      </article>
-      <article class="svc gs-up svc-x"><span class="tide" aria-hidden="true" style="background-image:url(img/svc-3.webp)"><i class="wv"></i></span>
-        <span class="no">Advisory</span>
-        <h3 class="t3">Critical thinking, applied</h3>
-        <p>Helping clients navigate the unique challenges facing investors and operators with both critical thinking and creativity. Our relationships with owners across all asset classes open unique opportunities to further their portfolios.</p>
-      </article>
-    </div>
-
-    <div class="caps gs-fade" id="sources">
-      <div class="caps-head"><p class="sig caps-k">Capital sources</p><p class="caps-note">Select a source to request its tear sheet.</p></div>
-      <div class="caps-row">
-        <a class="cap" href="#contact" data-sheet="HUD / FHA" aria-label="Request the HUD / FHA tear sheet"><span>HUD / FHA</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="Fannie Mae DUS" aria-label="Request the Fannie Mae DUS tear sheet"><span>Fannie Mae DUS</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="Freddie Mac" aria-label="Request the Freddie Mac tear sheet"><span>Freddie Mac</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="CMBS" aria-label="Request the CMBS tear sheet"><span>CMBS</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="Bank" aria-label="Request the Bank tear sheet"><span>Bank</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="Life Company" aria-label="Request the Life Company tear sheet"><span>Life Company</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="Bridge" aria-label="Request the Bridge tear sheet"><span>Bridge</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="Mezzanine" aria-label="Request the Mezzanine tear sheet"><span>Mezzanine</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-        <a class="cap" href="#contact" data-sheet="Equity" aria-label="Request the Equity tear sheet"><span>Equity</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg></a>
-      </div>
-    </div>
-
-    <div style="margin-top:clamp(64px,8vw,110px)">
-      <p class="sig sig-lg gs-fade" style="margin-bottom:34px">Asset classes</p>
-      <div class="aidx">
-        <div class="arow gs-fade">
-          <h3 class="t3">Multifamily</h3>
-          <p>Creativity and expertise across conventional, affordable and student housing — leveraging lender relationships and decades of experience.</p>
-        </div>
-        <div class="arow gs-fade">
-          <h3 class="t3">Healthcare</h3>
-          <p>Billions arranged for skilled nursing, independent living, assisted living and memory care facilities across the country.</p>
-        </div>
-        <div class="arow gs-fade">
-          <h3 class="t3">Hospitality</h3>
-          <p>From limited service to full-service luxury hotels — tailor-made financing built on a deep understanding of the industry.</p>
-        </div>
-        <div class="arow gs-fade">
-          <h3 class="t3">Office &amp; Mixed-Use</h3>
-          <p>Diverse financing solutions for mixed-use and office properties nationwide, structured around each asset's tenancy and story.</p>
-        </div>
-        <div class="arow gs-fade">
-          <h3 class="t3">Retail</h3>
-          <p>Strip centers, grocery-anchored and big-box anchored shopping centers — unique financing solutions nationwide.</p>
-        </div>
-        <div class="arow gs-fade">
-          <h3 class="t3">Industrial</h3>
-          <p>Logistics, flex and self-storage assets, financed against the operating fundamentals that actually drive value.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═════════ TRANSACTIONS ═════════ -->
 <section class="chapter" id="transactions">
   <div class="wrap">
@@ -881,7 +952,6 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
         <p class="sig sig-lg gs-fade" style="margin-bottom:22px">Closed deals</p>
         <h2 class="t2 t2-sub"><span class="msk"><span><i>Closed</i>, not pitched.</span></span></h2>
       </div>
-      <a class="pill gs-fade" href="#contact"><span>Request the tombstone book</span></a>
     </div>
 
     <div class="filters gs-fade" role="group" aria-label="Filter deals by asset class">
@@ -894,7 +964,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
     </div>
 
     <div class="cards" id="dealCards">
-      <article class="fcard gs-up" data-c="retail" tabindex="0" role="button" aria-pressed="false" aria-label="Anchored retail portfolio, $102,560,000, WV · PA · NJ · TX — activate to see deal points">
+      <article class="fcard gs-up" data-c="retail" tabindex="0" role="button" aria-pressed="false" aria-label="Anchored retail portfolio, $102,560,000, WV · PA · NJ · TX. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-1.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -910,7 +980,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="19-facility senior living portfolio, $68,300,000, Tennessee · Kentucky — activate to see deal points">
+      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="19-facility senior living portfolio, $68,300,000, Tennessee · Kentucky. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-2.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -921,12 +991,12 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           <div class="fc-back">
             <span class="fc-tag2">Bank · Tennessee · Kentucky</span>
             <h3>19-facility senior living portfolio</h3>
-            <ul><li>910 beds — assisted, memory care, independent</li><li>Libor + 155 with a fee cap</li><li>Five-year term, 17-year amortization</li><li>Additional proceeds for expansion</li></ul>
+            <ul><li>910 beds: assisted, memory care, independent</li><li>Libor + 155 with a fee cap</li><li>Five-year term, 17-year amortization</li><li>Additional proceeds for expansion</li></ul>
             <b class="fc-amt">$68,300,000</b>
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="Independent living pair, $19,168,000, Michigan · Texas — activate to see deal points">
+      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="Independent living pair, $19,168,000, Michigan · Texas. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-3.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -942,7 +1012,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="office" tabindex="0" role="button" aria-pressed="false" aria-label="Historic mixed-use redevelopment, $22,000,000, Dallas, Texas — activate to see deal points">
+      <article class="fcard gs-up" data-c="office" tabindex="0" role="button" aria-pressed="false" aria-label="Historic mixed-use redevelopment, $22,000,000, Dallas, Texas. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-4.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -958,7 +1028,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="multifamily" tabindex="0" role="button" aria-pressed="false" aria-label="Multifamily apartments, $15,000,000, Washington — activate to see deal points">
+      <article class="fcard gs-up" data-c="multifamily" tabindex="0" role="button" aria-pressed="false" aria-label="Multifamily apartments, $15,000,000, Washington. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-5.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -974,7 +1044,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="Boutique skilled nursing build, $14,500,000, California — activate to see deal points">
+      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="Boutique skilled nursing build, $14,500,000, California. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-6.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -990,7 +1060,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="hospitality" tabindex="0" role="button" aria-pressed="false" aria-label="Comfort Inn refinance, $12,000,000, Washington, D.C. — activate to see deal points">
+      <article class="fcard gs-up" data-c="hospitality" tabindex="0" role="button" aria-pressed="false" aria-label="Comfort Inn refinance, $12,000,000, Washington, D.C.. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-7.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -1006,7 +1076,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="multifamily" tabindex="0" role="button" aria-pressed="false" aria-label="Garden style apartments, $11,600,000, Oklahoma — activate to see deal points">
+      <article class="fcard gs-up" data-c="multifamily" tabindex="0" role="button" aria-pressed="false" aria-label="Garden style apartments, $11,600,000, Oklahoma. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-8.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -1022,7 +1092,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="Skilled nursing refinance, $11,440,000, Massachusetts — activate to see deal points">
+      <article class="fcard gs-up" data-c="healthcare" tabindex="0" role="button" aria-pressed="false" aria-label="Skilled nursing refinance, $11,440,000, Massachusetts. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-9.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -1038,7 +1108,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
           </div>
         </div>
       </article>
-      <article class="fcard gs-up" data-c="office" tabindex="0" role="button" aria-pressed="false" aria-label="New construction office, $8,200,000, New York — activate to see deal points">
+      <article class="fcard gs-up" data-c="office" tabindex="0" role="button" aria-pressed="false" aria-label="New construction office, $8,200,000, New York. Activate to see deal points">
         <div class="fc-in">
           <div class="fc-front">
             <img src="img/deal-10.webp?v=5" alt="" width="1400" height="1400" loading="lazy" decoding="async">
@@ -1060,101 +1130,6 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
 </section>
 
 
-
-<!-- ═════════ NEWS + FAQ ═════════ -->
-<section class="chapter" id="news">
-  <div class="wrap">
-    <div>
-      <p class="sig sig-lg gs-fade" style="margin-bottom:22px">Clarity in lending</p>
-      <h2 class="t2 t2-sub" style="margin-bottom:clamp(36px,4.4vw,56px)"><span class="msk"><span>Asked, <i>answered</i>.</span></span></h2>
-      <div class="faq">
-        <div class="qa">
-          <button class="qa-q" id="qq0" aria-expanded="false" aria-controls="qa0">
-            <span>What separates you from your competition?</span>
-            <span class="qa-fact">One-stop shop</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa0" role="region" aria-labelledby="qq0" hidden>
-            <p>Harborview is a true one-stop shop for all commercial real estate capital. Our wide variety of debt, equity and advisory products and services truly separates us from the competition — as does our proprietary <span class="gl" tabindex="0" data-def="Subordinate debt that sits behind the senior loan, used to raise total leverage.">mezzanine</span> financing platform.</p>
-          </div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" id="qq1" aria-expanded="false" aria-controls="qa1">
-            <span>How do I get higher leverage on my transaction?</span>
-            <span class="qa-fact">+5–20 points</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa1" role="region" aria-labelledby="qq1" hidden>
-            <p>It depends on the asset class, but HUD loans offer higher leverage in general, and mezzanine options for an additional 5–20% leverage points are available from our Harborview Funding balance sheet product and our relationship lenders for most asset classes and transaction sizes. For smaller deals — under a $10M mezz check — be prepared for recourse. We always add a creative layer to the structuring, weighing leverage against rate and terms to craft the best loan for your needs.</p>
-          </div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" id="qq2" aria-expanded="false" aria-controls="qa2">
-            <span>Will an interest-only period be available, and for how long?</span>
-            <span class="qa-fact">6–24 months</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa2" role="region" aria-labelledby="qq2" hidden>
-            <p>Interest-only is typically given in new construction and substantial rehabilitation as a matter of course. The same can be had on value-add, turnaround or repositioning transactions if the need is demonstrated to the lender — generally 6 to 24 months from a bank, proportionate to the need. CMBS lenders will structure interest-only periods of 2, 3, 5 or even 7 years or longer for projects with a particularly strong credit profile.</p>
-          </div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" id="qq3" aria-expanded="false" aria-controls="qa3">
-            <span>How long does a HUD deal really take?</span>
-            <span class="qa-fact">2–4 months</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa3" role="region" aria-labelledby="qq3" hidden>
-            <p>For an <span class="gl" tabindex="0" data-def="HUD's 223(a)(7) streamlined refinance of an existing HUD-insured loan.">A7</span> refinance, either MAP or LEAN, figure 2 to 4 months including all processing and closing. A healthcare refinance into HUD — a LEAN 232(f) deal — adds about a month due to the diligence, underwriting and third parties involved. A multifamily MAP 223(f) is simpler, with timing similar to an A7. Timing is also affected by HUD office workload, which varies by season — choose a lender with a good HUD relationship, and ask about early rate lock.</p>
-          <div class="tchart" role="img" aria-label="Typical timelines: conventional loan 45–60 days; HUD A7 refinance 2–4 months; multifamily MAP 223(f) 2–4 months; healthcare LEAN 232(f) 3–5 months">
-            <div class="tc-row"><span class="tc-l">Conventional loan</span><span class="tc-track"><span class="tc-bar" style="left:25%;width:8.3%"></span></span><span class="tc-v">45–60 days</span></div>
-            <div class="tc-row"><span class="tc-l">HUD A7 refinance</span><span class="tc-track"><span class="tc-bar" style="left:33.3%;width:33.4%"></span></span><span class="tc-v">2–4 mo</span></div>
-            <div class="tc-row"><span class="tc-l">Multifamily MAP 223(f)</span><span class="tc-track"><span class="tc-bar" style="left:33.3%;width:33.4%"></span></span><span class="tc-v">2–4 mo</span></div>
-            <div class="tc-row"><span class="tc-l">Healthcare LEAN 232(f)</span><span class="tc-track"><span class="tc-bar" style="left:50%;width:33.3%"></span></span><span class="tc-v">3–5 mo</span></div>
-            <div class="tc-axis"><span>0</span><span>2</span><span>4</span><span>6 months</span></div>
-          </div>
-          </div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" id="qq4" aria-expanded="false" aria-controls="qa4">
-            <span>How long does it take to close a loan?</span>
-            <span class="qa-fact">45–60 days</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa4" role="region" aria-labelledby="qq4" hidden>
-            <p>It depends on the type of loan — typically 45 to 60 days, with the exception of a HUD execution.</p>
-          </div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" id="qq5" aria-expanded="false" aria-controls="qa5">
-            <span>Is it possible to get a non-recourse loan?</span>
-            <span class="qa-fact">Yes</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa5" role="region" aria-labelledby="qq5" hidden>
-            <p>Yes. HUD, Fannie Mae, Freddie Mac, CMBS and life company loans are all <span class="gl" tabindex="0" data-def="The lender's remedy is limited to the property; the borrower isn't personally liable, subject to standard carve-outs.">non-recourse</span>, and there are banks that may offer non-recourse in certain cases.</p>
-          </div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" id="qq6" aria-expanded="false" aria-controls="qa6">
-            <span>What do you need from us to source an equity partner?</span>
-            <span class="qa-fact">Three things</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa6" role="region" aria-labelledby="qq6" hidden>
-            <p>A clear, concise overview of the deal itself; resume, background and completed-deal information on the sponsor; and an underwriting model showing current and proposed financials with equity splits and returns. We have many partners — large and small, with different appetites, target markets and return profiles — eager to see new deals from quality sponsors.</p>
-          </div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" id="qq7" aria-expanded="false" aria-controls="qa7">
-            <span>What are your typical fees?</span>
-            <span class="qa-fact">Market based</span><span class="qa-ico" aria-hidden="true"></span>
-          </button>
-          <div class="qa-a" id="qa7" role="region" aria-labelledby="qq7" hidden>
-            <p>Our fees are market based, and we have never lost a deal based on fees. We offer transparency and clarity in every aspect of your transaction from start to finish, including all fees. Many of our clients tell us their savings from reduced rates, cash-out to investors or better leverage utilization far exceed any deal costs.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-cta gs-fade">
-        <p>Didn't find your answer?</p>
-        <a class="pill" href="#contact" id="faqAsk"><span>Ask a principal directly</span></a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═════════ DIRECTORY ═════════
      To add contact details: fill the href + <span> on the matching <li>.
@@ -1283,7 +1258,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
 </section>
 
 <!-- ═════════ CONTACT ═════════ -->
-<section class="on-light chapter" id="contact">
+<section class="chapter" id="contact">
   <div class="wrap contact">
     <div>
       <p class="sig sig-lg gs-fade">Connect</p>
@@ -1325,7 +1300,6 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
     <div class="foot-mark"><img src="img/logo-blue-light.png?v=2" alt="Harborview Capital Partners" width="1013" height="256" loading="lazy" decoding="async"></div>
     <div class="fcols">
       <div class="about-f">
-        <p>A full-service commercial real estate finance, equity and advisory firm. Clarity in lending. Certainty of execution.</p>
         <div class="social">
           <a href="tel:+15164539400" aria-label="Call the Harborview main line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
@@ -1351,7 +1325,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
       </div>
       <div>
         <h3>Connect</h3>
-        <ul><li><a href="#directory">Directory</a></li><li><a href="#contact">Contact us</a></li><li><a href="#news">FAQs</a></li></ul>
+        <ul><li><a href="#directory">Directory</a></li><li><a href="#contact">Contact us</a></li></ul>
       </div>
     </div>
     <div class="fbase">
@@ -1366,7 +1340,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
   "@context":"https://schema.org",
   "@type":"FinancialService",
   "name":"Harborview Capital Partners",
-  "description":"Full-service commercial real estate finance, equity and advisory firm — debt, equity and advisory across multifamily, healthcare, office, retail, industrial and hospitality.",
+  "description":"Full-service commercial real estate finance, equity and advisory firm: debt, equity and advisory across multifamily, healthcare, office, retail, industrial and hospitality.",
   "telephone":"+1-516-453-9400",
   "foundingDate":"2013-04",
   "slogan":"Clarity in lending. Certainty of execution.",
@@ -1505,7 +1479,7 @@ html.serif .cap,html.serif .foot-tel{letter-spacing:0}
       form.querySelector('[aria-invalid="true"]').focus();
       return;
     }
-    note.textContent = "Thank you — a principal will be in touch shortly.";
+    note.textContent = "Thank you. A principal will be in touch shortly.";
     note.className = "formnote ok";
     form.reset();
   });
