@@ -759,12 +759,13 @@ header .nav-cta{justify-self:end}
 .ldr{position:fixed;inset:0;z-index:400;background:var(--deep);display:none;align-items:center;justify-content:center}
 html.e-pre .ldr{display:flex}
 html.e-pre,html.e-pre body{overflow:hidden}
-.ldr-word{display:flex;align-items:center;gap:clamp(12px,1.5vw,24px);height:clamp(70px,9.5vw,136px)}
+.ldr-word{display:flex;align-items:center;gap:clamp(16px,2.4vw,40px);height:clamp(110px,17vw,250px)}
 .ldr-l{display:block;height:100%;background:#fff;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
 .ldr-h{--m:url(img/ldr-H.png);aspect-ratio:165/445}
-.ldr-v{--m:url(img/ldr-V.png);aspect-ratio:191/445}
-.ldr-o{position:relative;height:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#0F2C4A;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),0 10px 40px rgba(0,0,0,.4)}
+.ldr-p{--m:url(img/ldr-P.png);aspect-ratio:162/445}
+/* the C is a porthole: the harbor photos cycle inside its stroke */
+.ldr-o{position:relative;height:100%;aspect-ratio:366/445;background:#0F2C4A;
+  -webkit-mask:url(img/ldr-C.png) center/contain no-repeat;mask:url(img/ldr-C.png) center/contain no-repeat}
 .ldr-o img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
 .ldr-o img.on{opacity:1}
 .ldr-n{position:absolute;left:50%;bottom:clamp(22px,4.5vh,44px);transform:translateX(-50%);
@@ -872,7 +873,7 @@ html.e-pre,html.e-pre body{overflow:hidden}
     <span class="ldr-o">
       <img src="img/crop-boats.webp" alt=""><img src="img/crop-lighthouse.webp" alt=""><img src="img/crop-water.webp" alt=""><img src="img/crop-birds.webp" alt=""><img src="img/harbor-detail-1200.webp" alt=""><img src="img/miami-marina-900.webp" alt="">
     </span>
-    <span class="ldr-l ldr-v"></span>
+    <span class="ldr-l ldr-p"></span>
   </div>
   <div class="ldr-n" id="ldrN">000</div>
 </div>
@@ -1751,7 +1752,7 @@ html.e-pre,html.e-pre body{overflow:hidden}
         tl.to(c, {v:100, duration:2.3, ease:"power1.inOut", onUpdate:function(){ n.textContent = String(Math.round(c.v)).padStart(3, "0"); }})
           .add(function(){ clearInterval(cyc); })
           .to(".ldr-h", {xPercent:-160, opacity:0, duration:.75, ease:"power3.in"}, "+=.08")
-          .to(".ldr-v", {xPercent:160, opacity:0, duration:.75, ease:"power3.in"}, "<")
+          .to(".ldr-p", {xPercent:160, opacity:0, duration:.75, ease:"power3.in"}, "<")
           .to(".ldr-o, .ldr-n, .ldr-cap", {opacity:0, scale:.82, duration:.55, ease:"power2.in"}, "<.08")
           .add(function(){ ldr.remove(); document.documentElement.classList.remove("e-pre"); });
       } else if (ldr){ ldr.remove(); }
