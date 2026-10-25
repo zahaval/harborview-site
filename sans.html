@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>/*FONT-DEFAULT*/if(new URLSearchParams(location.search).get("font")==="serif")document.documentElement.classList.add("serif")</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..700;1,62..125,300..700&family=Abel&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:ital,wght@0,300..700;1,300..700&display=swap">
-<link rel="preload" as="image" href="img/harbor-hero3-1600.webp" imagesrcset="img/harbor-hero3-900.webp 900w, img/harbor-hero3-1600.webp 1600w, img/harbor-hero3-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23081C31'/><path d='M16 6v16M16 22c-5.2 0-8.4-3.2-8.4-6.4l8.4 3.2 8.4-3.2c0 3.2-3.2 6.4-8.4 6.4Z' stroke='%23FFFFFF' stroke-width='1.6' fill='none' stroke-linejoin='round'/><circle cx='16' cy='7.6' r='1.9' stroke='%23FFFFFF' stroke-width='1.4' fill='none'/></svg>">
 <style>
 /* ═══════════════════════════════════════════════════════════
@@ -754,7 +753,76 @@ header .nav-cta{justify-self:end}
 .tkr .tk b{font-size:clamp(15px,1.4vw,19px)}
 .tkr .tk i.tkd{font-size:11px;margin-top:4px}
 .tkr .tkr-note{font-size:11px;padding:7px 14px}
+
+/* ═════════ DRAFT F — navy wordmark home screen ═════════ */
+:root{--g:clamp(14px,1.45vw,24px);--deep:#081C31;--fog2:#C9D0D6}
+.ldr{position:fixed;inset:0;z-index:400;background:var(--deep);display:none;align-items:center;justify-content:center}
+html.e-pre .ldr{display:flex}
+html.e-pre,html.e-pre body{overflow:hidden}
+.ldr-word{display:flex;align-items:center;gap:clamp(12px,1.5vw,24px);height:clamp(70px,9.5vw,136px)}
+.ldr-l{display:block;height:100%;background:#fff;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.ldr-h{--m:url(img/ldr-H.png);aspect-ratio:165/445}
+.ldr-v{--m:url(img/ldr-V.png);aspect-ratio:191/445}
+.ldr-o{position:relative;height:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#0F2C4A;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),0 10px 40px rgba(0,0,0,.4)}
+.ldr-o img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.ldr-o img.on{opacity:1}
+.ldr-n{position:absolute;left:50%;bottom:clamp(22px,4.5vh,44px);transform:translateX(-50%);
+  font-family:var(--sans);font-size:12.5px;letter-spacing:.24em;color:var(--fog2);font-variant-numeric:tabular-nums}
+.ldr-cap{position:absolute;left:var(--g);top:calc(var(--g) + 10px);margin:0;font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,208,214,.55)}
+
+.hero.hero-f{display:block;background:var(--deep);color:#fff;min-height:100svh;position:relative;overflow:clip;padding:0;--r:clamp(70px,7.5vw,110px)}
+@media (hover:hover){.hero.hero-f,.hero-f a{cursor:none}}
+.f-mark{position:absolute;left:var(--g);right:var(--g);top:50%;transform:translateY(-56%);margin:0;aspect-ratio:2532/640;will-change:clip-path}
+.f-layer{position:absolute;inset:0;display:block;
+  -webkit-mask:url(img/logo-mask.png) center/100% 100% no-repeat;mask:url(img/logo-mask.png) center/100% 100% no-repeat}
+.f-white{background:#fff}
+.f-sea{background:#2E7BC0 url(img/harbor-hero2-1600.webp) center 55%/cover no-repeat;filter:saturate(1.15) brightness(1.08);
+  clip-path:circle(var(--r) at var(--mx,-9999px) var(--my,-9999px));will-change:clip-path}
+/* the lede, set in the wordmark's face, rides the wave like its reflection */
+.f-refl{position:absolute;left:0;top:0;width:100%;height:auto;overflow:visible;pointer-events:none}
+.f-refl text{font-family:"Abel","Archivo Narrow",sans-serif;font-size:52px;letter-spacing:.14em;fill:#fff}
+.f-refl .r1{opacity:.78}
+.f-refl .r2{opacity:.5}
+/* the cursor is the sail */
+.f-lens{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;z-index:4;display:grid;place-items:center;transform:translate(-9999px,-9999px)}
+.f-lens img{width:clamp(22px,2vw,30px);height:auto;filter:drop-shadow(0 2px 10px rgba(8,28,49,.7))}
+@media (hover:none){.f-lens{display:none}}
+
+.f-tag{position:absolute;left:var(--g);top:calc(88px + 14px);margin:0;z-index:3;pointer-events:none;
+  font-family:var(--sans);font-size:clamp(15px,1.3vw,20px);line-height:1.22;color:#fff}
+.f-lede{display:none;position:absolute;left:var(--g);bottom:calc(var(--g) + 4px);max-width:40ch;margin:0;font-size:13px;line-height:1.5;color:var(--fog2)}
+.f-top10{position:absolute;left:var(--g);bottom:calc(var(--g) + 6px);margin:0;display:flex;align-items:center;gap:12px;
+  font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--fog2)}
+.f-top10 i{display:block;width:34px;height:1px;background:#9AD1FF}
+.f-top10 b{color:#fff;font-weight:600}
+.f-links{position:absolute;right:var(--g);bottom:calc(var(--g) + 8px);display:flex;gap:10px;align-items:center;
+  font-family:var(--sans);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:#fff}
+.f-links a{color:inherit;text-decoration:none;transition:color .3s}
+.f-links a:hover{color:#9AD1FF}
+.f-scroll{position:absolute;left:50%;bottom:calc(var(--g) + 6px);transform:translateX(-50%);font-family:var(--sans);font-size:10.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(201,208,214,.6);display:flex;flex-direction:column;align-items:center;gap:8px}
+.f-scroll i{display:block;width:1px;height:28px;background:linear-gradient(#9AD1FF,transparent);animation:fdrop 2.2s ease-in-out infinite;transform-origin:top}
+@keyframes fdrop{0%{transform:scaleY(0);opacity:0}30%{opacity:1}100%{transform:scaleY(1);opacity:0}}
+
+.f-rates{background:var(--deep);padding:0 0 clamp(28px,4vw,52px)}
+.draft-tag{color:var(--fog2);background:rgba(8,28,49,.85);border-color:rgba(255,255,255,.2)}
+@media (max-width:760px){
+  .f-mark{top:44%}
+  .f-refl,.f-links,.f-scroll{display:none}
+  .f-lede{display:block;bottom:calc(var(--g) + 44px);max-width:34ch;font-size:13px}
+  .f-top10{font-size:10px;letter-spacing:.14em}
+  .f-top10 i{display:none}
+  .f-tag{font-size:15px;top:calc(88px + 4px)}
+}
 </style>
+<script>
+  /* loader before first paint, unless reduced motion (or #still); never let it trap the page */
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches && location.hash !== "#still"){
+    document.documentElement.classList.add("e-pre");
+    setTimeout(function(){ document.documentElement.classList.remove("e-pre"); }, 7000);
+  }
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -783,24 +851,36 @@ header .nav-cta{justify-self:end}
 <main id="main">
 
 <!-- ═════════ HERO ═════════ -->
-<section class="hero" id="top">
-  <div class="hero-media" aria-hidden="true">
-    <img id="heroImg"
-      src="img/harbor-hero3-1600.webp"
-      srcset="img/harbor-hero3-900.webp 900w, img/harbor-hero3-1600.webp 1600w, img/harbor-hero3-2560.webp 2560w"
-      sizes="100vw" alt="" width="2560" height="1440" fetchpriority="high" decoding="async">
+<div class="ldr" id="ldr" aria-hidden="true">
+  <p class="ldr-cap">Harborview Capital Partners</p>
+  <div class="ldr-word">
+    <span class="ldr-l ldr-h"></span>
+    <span class="ldr-o">
+      <img src="img/crop-boats.webp" alt=""><img src="img/crop-lighthouse.webp" alt=""><img src="img/crop-water.webp" alt=""><img src="img/crop-birds.webp" alt=""><img src="img/harbor-detail-1200.webp" alt=""><img src="img/skyline-golden.webp" alt="">
+    </span>
+    <span class="ldr-l ldr-v"></span>
   </div>
-  <div class="hero-core">
-    <div class="wrap">
-      <div class="hero-kick gs-fade"><p class="sig" style="color:#C9D0D6">Top 10 HUD lender since 2013 · Harborview and its partners</p></div>
-      <h1 class="hero-mark">
-        <img src="img/logo-blue-light.png?v=2" alt="Harborview Capital Partners" width="1013" height="256" fetchpriority="high">
-      </h1>
-      <div class="hero-between"><p class="hero-lede gs-fade">A full-service commercial real estate finance, equity and advisory firm. Providing unparalleled access to capital across every asset class.</p></div>
-    </div>
-  </div>
-  <div class="hero-foot">
-    <div class="wrap">
+  <div class="ldr-n" id="ldrN">000</div>
+</div>
+<section class="hero hero-f" id="top">
+  <p class="f-tag">Clarity in lending.<br>Certainty of execution.</p>
+  <h1 class="f-mark" id="fMark" aria-label="Harborview Capital Partners">
+    <span class="f-layer f-white" aria-hidden="true"></span>
+    <span class="f-layer f-sea" aria-hidden="true"></span>
+    <svg class="f-refl" viewBox="0 0 2532 640" aria-hidden="true">
+      <defs><path id="fw1" d="M0 586 L24 591 L48 600 L72 611 L96 622 L120 632 L144 642 L168 652 L192 662 L216 671 L240 680 L264 688 L288 697 L312 704 L336 711 L360 718 L384 724 L408 729 L432 734 L456 738 L480 741 L504 744 L528 746 L552 749 L576 750 L600 751 L624 751 L648 751 L672 751 L696 750 L720 748 L744 746 L768 744 L792 741 L816 737 L840 733 L864 728 L888 724 L912 718 L936 713 L960 707 L984 701 L1008 695 L1032 689 L1056 682 L1080 676 L1104 669 L1128 662 L1152 656 L1176 649 L1200 643 L1224 637 L1248 631 L1272 625 L1296 620 L1320 614 L1344 609 L1368 605 L1392 600 L1416 596 L1440 592 L1464 588 L1488 585 L1512 581 L1536 578 L1560 575 L1584 572 L1608 569 L1632 567 L1656 564 L1680 562 L1704 560 L1728 558 L1752 557 L1776 555 L1800 554 L1824 553 L1848 553 L1872 552 L1896 552 L1920 552 L1944 552 L1968 553 L1992 554 L2016 554 L2040 555 L2064 557 L2088 558 L2112 560 L2136 562 L2160 564 L2184 566 L2208 569 L2232 572 L2256 575 L2280 578 L2304 582 L2328 586 L2352 591 L2376 596 L2400 601 L2424 606 L2448 612 L2472 618 L2496 623 L2520 625"/><path id="fw2" d="M0 662 L24 667 L48 676 L72 687 L96 698 L120 708 L144 718 L168 728 L192 738 L216 747 L240 756 L264 764 L288 773 L312 780 L336 787 L360 794 L384 800 L408 805 L432 810 L456 814 L480 817 L504 820 L528 822 L552 825 L576 826 L600 827 L624 827 L648 827 L672 827 L696 826 L720 824 L744 822 L768 820 L792 817 L816 813 L840 809 L864 804 L888 800 L912 794 L936 789 L960 783 L984 777 L1008 771 L1032 765 L1056 758 L1080 752 L1104 745 L1128 738 L1152 732 L1176 725 L1200 719 L1224 713 L1248 707 L1272 701 L1296 696 L1320 690 L1344 685 L1368 681 L1392 676 L1416 672 L1440 668 L1464 664 L1488 661 L1512 657 L1536 654 L1560 651 L1584 648 L1608 645 L1632 643 L1656 640 L1680 638 L1704 636 L1728 634 L1752 633 L1776 631 L1800 630 L1824 629 L1848 629 L1872 628 L1896 628 L1920 628 L1944 628 L1968 629 L1992 630 L2016 630 L2040 631 L2064 633 L2088 634 L2112 636 L2136 638 L2160 640 L2184 642 L2208 645 L2232 648 L2256 651 L2280 654 L2304 658 L2328 662 L2352 667 L2376 672 L2400 677 L2424 682 L2448 688 L2472 694 L2496 699 L2520 701"/></defs>
+      <text class="r1"><textPath href="#fw1" id="ft1" startOffset="9%">A FULL-SERVICE COMMERCIAL REAL ESTATE FINANCE, EQUITY AND ADVISORY FIRM.</textPath></text>
+      <text class="r2"><textPath href="#fw2" id="ft2" startOffset="15%">PROVIDING UNPARALLELED ACCESS TO CAPITAL ACROSS EVERY ASSET CLASS.</textPath></text>
+    </svg>
+  </h1>
+  <div class="f-lens" id="fLens" aria-hidden="true"><img src="img/hv-icon-white.svg" alt="" width="442" height="510"></div>
+  <p class="f-lede">A full-service commercial real estate finance, equity and advisory firm. Providing unparalleled access to capital across every asset class.</p>
+  <p class="f-top10"><i></i><span><b>Top 10 HUD lender</b> in the country · since 2013</span></p>
+  <nav class="f-links" aria-label="Quick links"><a href="#transactions">Closed deals</a><span>/</span><a href="#directory">Directory</a></nav>
+  <div class="f-scroll" aria-hidden="true"><i></i>Scroll</div>
+</section>
+<section class="f-rates" aria-label="Live interest rates">
+  <div class="wrap">
       <div class="tkr" id="tkr" aria-label="Live interest rates">
         <div class="tkr-row" id="tkrRow">
           <button class="tk" data-r="sofr"><span>SOFR</span><b>—</b><i class="tkd"></i></button>
@@ -814,7 +894,6 @@ header .nav-cta{justify-self:end}
         <p class="tkr-note"><span id="tkrDate">Loading rates…</span> · NY Fed &amp; U.S. Treasury · indicative only</p>
         <div class="tkpop" id="tkPop" hidden aria-hidden="true"></div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -1596,6 +1675,39 @@ header .nav-cta{justify-self:end}
     });
   })();
 
+
+  /* ── Draft F: the cursor is the sail; the harbor shows through the letters around it ── */
+  (function(){
+    var hero = document.querySelector(".hero-f"), mark = document.getElementById("fMark"), lens = document.getElementById("fLens");
+    if (!hero || !mark || !lens || !window.gsap) return;
+    var still = matchMedia("(prefers-reduced-motion: reduce)").matches || location.hash === "#still";
+    var pos = {x:-9999, y:-9999}, sweep = null, over = false, leaveT = 0, lx = null, ly = null;
+    var tx = gsap.quickTo(pos, "x", {duration:.5, ease:"power3"}), ty = gsap.quickTo(pos, "y", {duration:.5, ease:"power3"});
+    gsap.ticker.add(function(){
+      if (pos.x === lx && pos.y === ly) return; lx = pos.x; ly = pos.y;
+      var hb = hero.getBoundingClientRect(), mb = mark.getBoundingClientRect();
+      mark.style.setProperty("--mx", (pos.x - (mb.left - hb.left)) + "px");
+      mark.style.setProperty("--my", (pos.y - (mb.top - hb.top)) + "px");
+      lens.style.transform = "translate(" + pos.x + "px," + pos.y + "px)";
+    });
+    function startSweep(){
+      if (still || sweep) return;
+      var hb = hero.getBoundingClientRect(), mb = mark.getBoundingClientRect();
+      var y0 = mb.top - hb.top + mb.height * .42, amp = mb.height * .22, o = {t:0};
+      sweep = gsap.to(o, {t:1, duration:14, ease:"none", repeat:-1, yoyo:true, onUpdate:function(){
+        tx(-120 + (hb.width + 240) * o.t); ty(y0 + Math.sin(o.t * Math.PI * 2.2) * amp);
+      }});
+    }
+    function stopSweep(){ if (sweep){ sweep.kill(); sweep = null; } }
+    hero.addEventListener("pointermove", function(e){
+      if (e.pointerType === "touch") return;
+      stopSweep(); over = true; clearTimeout(leaveT);
+      var hb = hero.getBoundingClientRect(); tx(e.clientX - hb.left); ty(e.clientY - hb.top);
+    });
+    hero.addEventListener("pointerleave", function(){ over = false; leaveT = setTimeout(function(){ if (!over) startSweep(); }, 1600); });
+    window.__fSweep = startSweep;
+    if (still){ var hb = hero.getBoundingClientRect(), mb = mark.getBoundingClientRect(); pos.x = hb.width * .62; pos.y = mb.top - hb.top + mb.height * .4; }
+  })();
   /* ————— motion ————— */
   if(!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
@@ -1608,20 +1720,37 @@ header .nav-cta{justify-self:end}
 
   mm.add("(prefers-reduced-motion: no-preference)", function(){
 
-    /* hero entrance */
-    var intro = gsap.timeline({defaults:{ease:"power4.out"}});
-    intro
-      .from("#heroImg", {scale:1.12, duration:2.4, ease:"power2.out"}, 0)
-      .from(".hero-mark img", {opacity:0, y:26, scale:.965, duration:1.5, ease:"power3.out"}, .25)
-      .from(".hero-kick", {opacity:0, y:14, duration:.9}, .55)
-      .from(".hero-between > *", {opacity:0, y:18, duration:.9, stagger:.1}, .8)
-      .from(".tkr", {opacity:0, y:22, duration:1, ease:"power3.out"}, .95);
 
-    /* hero settles back as you scroll away */
-    gsap.to(".hero-media img", {
-      yPercent:-10, ease:"none",
-      scrollTrigger:{trigger:".hero", start:"top top", end:"bottom top", scrub:true}
-    });
+    /* ── Draft F: H ◯ V loader (the O is a porthole onto the harbor), then the wordmark wipes in ── */
+    (function(){
+      var ldr = document.getElementById("ldr"), pre = document.documentElement.classList.contains("e-pre");
+      var tl = gsap.timeline({defaults:{ease:"power4.out"}});
+      if (ldr && pre){
+        var pics = ldr.querySelectorAll(".ldr-o img"), n = document.getElementById("ldrN"), k = 0;
+        pics[0].classList.add("on");
+        var cyc = setInterval(function(){ pics[k].classList.remove("on"); k = (k + 1) % pics.length; pics[k].classList.add("on"); }, 360);
+        var c = {v:0};
+        tl.to(c, {v:100, duration:2.3, ease:"power1.inOut", onUpdate:function(){ n.textContent = String(Math.round(c.v)).padStart(3, "0"); }})
+          .add(function(){ clearInterval(cyc); })
+          .to(".ldr-h", {xPercent:-160, opacity:0, duration:.75, ease:"power3.in"}, "+=.08")
+          .to(".ldr-v", {xPercent:160, opacity:0, duration:.75, ease:"power3.in"}, "<")
+          .to(".ldr-o, .ldr-n, .ldr-cap", {opacity:0, scale:.82, duration:.55, ease:"power2.in"}, "<.08")
+          .add(function(){ ldr.remove(); document.documentElement.classList.remove("e-pre"); });
+      } else if (ldr){ ldr.remove(); }
+      if (location.hash !== "#still") tl
+        .fromTo(".f-mark", {clipPath:"inset(0 100% 0 0)"}, {clipPath:"inset(0 0% 0 0)", duration:1.5, ease:"power4.inOut"}, pre ? "-=.3" : .15)
+        .from(".f-refl text", {opacity:0, y:14, duration:1.1, stagger:.12}, "-=.5")
+        .from(".f-tag, .f-top10, .f-links, .f-scroll, #hdr .hv-brand, #hdr .menu a, #hdr .pill", {opacity:0, y:12, duration:.9, stagger:.05}, "-=.9")
+        .add(function(){ if (window.__fSweep) window.__fSweep(); }, "-=.9")
+        .from(".tkr", {opacity:0, y:22, duration:1, ease:"power3.out"}, "-=.5");
+      /* the reflection drifts, slowly, in opposite directions */
+      gsap.to("#ft1", {attr:{startOffset:"13%"}, duration:11, ease:"sine.inOut", repeat:-1, yoyo:true});
+      gsap.to("#ft2", {attr:{startOffset:"10%"}, duration:13, ease:"sine.inOut", repeat:-1, yoyo:true});
+    })();
+
+    /* the wordmark lifts away as you scroll */
+    gsap.to(".f-mark", {yPercent:-18, ease:"none", scrollTrigger:{trigger:".hero-f", start:"top top", end:"bottom top", scrub:true}});
+
 
     /* masked headline lines everywhere below the hero */
     document.querySelectorAll("section:not(.hero) .msk > span").forEach(function(line){
