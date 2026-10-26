@@ -759,9 +759,10 @@ header .nav-cta{justify-self:end}
 .ldr{position:fixed;inset:0;z-index:400;background:var(--deep);display:none;align-items:center;justify-content:center}
 html.e-pre .ldr{display:flex}
 html.e-pre,html.e-pre body{overflow:hidden}
-.ldr-sail{width:clamp(96px,11vw,150px);aspect-ratio:442/510;background:#fff;
-  -webkit-mask:url(img/hv-icon-white.svg) center/contain no-repeat;mask:url(img/hv-icon-white.svg) center/contain no-repeat;
-  filter:drop-shadow(0 10px 40px rgba(0,0,0,.4))}
+.ldr-sail{position:relative;width:min(80vw,calc(62vh * 442 / 510));aspect-ratio:442/510;background:#0F2C4A;
+  -webkit-mask:url(img/hv-icon-white.svg) center/contain no-repeat;mask:url(img/hv-icon-white.svg) center/contain no-repeat}
+.ldr-sail img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.ldr-sail img.on{opacity:1}
 .ldr-n{position:absolute;left:50%;bottom:clamp(22px,4.5vh,44px);transform:translateX(-50%);
   font-family:var(--sans);font-size:12.5px;letter-spacing:.24em;color:var(--fog2);font-variant-numeric:tabular-nums}
 .ldr-cap{position:absolute;left:var(--g);top:calc(var(--g) + 10px);margin:0;font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,208,214,.55)}
@@ -784,10 +785,11 @@ html.e-pre,html.e-pre body{overflow:hidden}
 /* the lede, set in the wordmark's face, rides the wave like its reflection */
 .f-refl{position:absolute;left:0;top:0;width:100%;height:auto;overflow:visible;pointer-events:none}
 .f-refl text{font-family:"Abel","Archivo Narrow",sans-serif;font-size:52px;letter-spacing:.14em;fill:#fff}
+.f-refl .r0{fill:var(--deep);font-size:31px;letter-spacing:.18em;dominant-baseline:middle}
 .f-refl .r1{opacity:.82}
 .f-refl .r2{opacity:.55}
 
-.f-tag{position:absolute;left:var(--g);top:calc(88px + 14px);margin:0;z-index:3;pointer-events:none;
+.f-tag{display:none;position:absolute;left:var(--g);top:calc(88px + 14px);margin:0;z-index:3;pointer-events:none;
   font-family:var(--sans);font-size:clamp(15px,1.3vw,20px);line-height:1.22;color:#fff}
 .f-lede{display:none;position:absolute;left:var(--g);bottom:calc(var(--g) + 4px);max-width:40ch;margin:0;font-size:13px;line-height:1.5;color:var(--fog2)}
 .f-top10{position:absolute;left:var(--g);bottom:calc(var(--g) + 2px);margin:0;display:flex;flex-direction:column;gap:5px;color:#fff}
@@ -812,7 +814,7 @@ html.e-pre,html.e-pre body{overflow:hidden}
   .f-top10 b{font-size:24px}
   .f-top10 span{font-size:10px;letter-spacing:.14em}
   .f-top10 i{display:none}
-  .f-tag{font-size:15px;top:calc(88px + 4px)}
+  .f-tag{display:block;font-size:15px;top:calc(88px + 4px)}
 }
 </style>
 <script>
@@ -852,7 +854,9 @@ html.e-pre,html.e-pre body{overflow:hidden}
 <!-- ═════════ HERO ═════════ -->
 <div class="ldr" id="ldr" aria-hidden="true">
   <p class="ldr-cap">Harborview Capital Partners</p>
-  <div class="ldr-sail" id="ldrSail"></div>
+  <div class="ldr-sail" id="ldrSail">
+    <img src="img/miami-marina-900.webp" alt=""><img src="img/crop-boats.webp" alt=""><img src="img/harbor-hero2-1600.webp" alt=""><img src="img/crop-lighthouse.webp" alt=""><img src="img/skyline-golden.webp" alt=""><img src="img/crop-water.webp" alt=""><img src="img/harbor-detail-1200.webp" alt=""><img src="img/crop-birds.webp" alt="">
+  </div>
   <div class="ldr-n" id="ldrN">000</div>
 </div>
 <section class="hero hero-f" id="top">
@@ -861,7 +865,8 @@ html.e-pre,html.e-pre body{overflow:hidden}
     <span class="f-layer f-white" aria-hidden="true"></span>
     <span class="f-layer f-sea" aria-hidden="true"></span>
     <svg class="f-refl" viewBox="0 0 2532 640" aria-hidden="true">
-      <defs><path id="fw1" d="M0 586 L24 591 L48 600 L72 611 L96 622 L120 632 L144 642 L168 652 L192 662 L216 671 L240 680 L264 688 L288 697 L312 704 L336 711 L360 718 L384 724 L408 729 L432 734 L456 738 L480 741 L504 744 L528 746 L552 749 L576 750 L600 751 L624 751 L648 751 L672 751 L696 750 L720 748 L744 746 L768 744 L792 741 L816 737 L840 733 L864 728 L888 724 L912 718 L936 713 L960 707 L984 701 L1008 695 L1032 689 L1056 682 L1080 676 L1104 669 L1128 662 L1152 656 L1176 649 L1200 643 L1224 637 L1248 631 L1272 625 L1296 620 L1320 614 L1344 609 L1368 605 L1392 600 L1416 596 L1440 592 L1464 588 L1488 585 L1512 581 L1536 578 L1560 575 L1584 572 L1608 569 L1632 567 L1656 564 L1680 562 L1704 560 L1728 558 L1752 557 L1776 555 L1800 554 L1824 553 L1848 553 L1872 552 L1896 552 L1920 552 L1944 552 L1968 553 L1992 554 L2016 554 L2040 555 L2064 557 L2088 558 L2112 560 L2136 562 L2160 564 L2184 566 L2208 569 L2232 572 L2256 575 L2280 578 L2304 582 L2328 586 L2352 591 L2376 596 L2400 601 L2424 606 L2448 612 L2472 618 L2496 623 L2520 625"/><path id="fw2" d="M0 662 L24 667 L48 676 L72 687 L96 698 L120 708 L144 718 L168 728 L192 738 L216 747 L240 756 L264 764 L288 773 L312 780 L336 787 L360 794 L384 800 L408 805 L432 810 L456 814 L480 817 L504 820 L528 822 L552 825 L576 826 L600 827 L624 827 L648 827 L672 827 L696 826 L720 824 L744 822 L768 820 L792 817 L816 813 L840 809 L864 804 L888 800 L912 794 L936 789 L960 783 L984 777 L1008 771 L1032 765 L1056 758 L1080 752 L1104 745 L1128 738 L1152 732 L1176 725 L1200 719 L1224 713 L1248 707 L1272 701 L1296 696 L1320 690 L1344 685 L1368 681 L1392 676 L1416 672 L1440 668 L1464 664 L1488 661 L1512 657 L1536 654 L1560 651 L1584 648 L1608 645 L1632 643 L1656 640 L1680 638 L1704 636 L1728 634 L1752 633 L1776 631 L1800 630 L1824 629 L1848 629 L1872 628 L1896 628 L1920 628 L1944 628 L1968 629 L1992 630 L2016 630 L2040 631 L2064 633 L2088 634 L2112 636 L2136 638 L2160 640 L2184 642 L2208 645 L2232 648 L2256 651 L2280 654 L2304 658 L2328 662 L2352 667 L2376 672 L2400 677 L2424 682 L2448 688 L2472 694 L2496 699 L2520 701"/></defs>
+      <defs><path id="fw0" d="M0 468 L24 473 L48 483 L72 493 L96 504 L120 515 L144 525 L168 535 L192 544 L216 553 L240 562 L264 570 L288 578 L312 585 L336 592 L360 598 L384 603 L408 608 L432 612 L456 615 L480 618 L504 620 L528 621 L552 622 L576 622 L600 622 L624 621 L648 619 L672 618 L696 615 L720 613 L744 609 L768 605 L792 601 L816 596 L840 591 L864 586 L888 580 L912 574 L936 567 L960 561 L984 554 L1008 547 L1032 540 L1056 534 L1080 527 L1104 520 L1128 513 L1152 506 L1176 499 L1200 493 L1224 487 L1248 481 L1272 476 L1296 470 L1320 465 L1344 461 L1368 456 L1392 452 L1416 448 L1440 444 L1464 441 L1488 438 L1512 435 L1536 432 L1560 429 L1584 427 L1608 425 L1632 423 L1656 421 L1680 419 L1704 418 L1728 417 L1752 416 L1776 415 L1800 415 L1824 415 L1848 415 L1872 416 L1896 417 L1920 418 L1944 419 L1968 420 L1992 422 L2016 424 L2040 426 L2064 428 L2088 430 L2112 433 L2136 435 L2160 438 L2184 441 L2208 444 L2232 448 L2256 451 L2280 455 L2304 459 L2328 464 L2352 469 L2376 474 L2400 479 L2424 485 L2448 491 L2472 497 L2496 503 L2520 506"/><path id="fw1" d="M0 586 L24 591 L48 600 L72 611 L96 622 L120 632 L144 642 L168 652 L192 662 L216 671 L240 680 L264 688 L288 697 L312 704 L336 711 L360 718 L384 724 L408 729 L432 734 L456 738 L480 741 L504 744 L528 746 L552 749 L576 750 L600 751 L624 751 L648 751 L672 751 L696 750 L720 748 L744 746 L768 744 L792 741 L816 737 L840 733 L864 728 L888 724 L912 718 L936 713 L960 707 L984 701 L1008 695 L1032 689 L1056 682 L1080 676 L1104 669 L1128 662 L1152 656 L1176 649 L1200 643 L1224 637 L1248 631 L1272 625 L1296 620 L1320 614 L1344 609 L1368 605 L1392 600 L1416 596 L1440 592 L1464 588 L1488 585 L1512 581 L1536 578 L1560 575 L1584 572 L1608 569 L1632 567 L1656 564 L1680 562 L1704 560 L1728 558 L1752 557 L1776 555 L1800 554 L1824 553 L1848 553 L1872 552 L1896 552 L1920 552 L1944 552 L1968 553 L1992 554 L2016 554 L2040 555 L2064 557 L2088 558 L2112 560 L2136 562 L2160 564 L2184 566 L2208 569 L2232 572 L2256 575 L2280 578 L2304 582 L2328 586 L2352 591 L2376 596 L2400 601 L2424 606 L2448 612 L2472 618 L2496 623 L2520 625"/><path id="fw2" d="M0 662 L24 667 L48 676 L72 687 L96 698 L120 708 L144 718 L168 728 L192 738 L216 747 L240 756 L264 764 L288 773 L312 780 L336 787 L360 794 L384 800 L408 805 L432 810 L456 814 L480 817 L504 820 L528 822 L552 825 L576 826 L600 827 L624 827 L648 827 L672 827 L696 826 L720 824 L744 822 L768 820 L792 817 L816 813 L840 809 L864 804 L888 800 L912 794 L936 789 L960 783 L984 777 L1008 771 L1032 765 L1056 758 L1080 752 L1104 745 L1128 738 L1152 732 L1176 725 L1200 719 L1224 713 L1248 707 L1272 701 L1296 696 L1320 690 L1344 685 L1368 681 L1392 676 L1416 672 L1440 668 L1464 664 L1488 661 L1512 657 L1536 654 L1560 651 L1584 648 L1608 645 L1632 643 L1656 640 L1680 638 L1704 636 L1728 634 L1752 633 L1776 631 L1800 630 L1824 629 L1848 629 L1872 628 L1896 628 L1920 628 L1944 628 L1968 629 L1992 630 L2016 630 L2040 631 L2064 633 L2088 634 L2112 636 L2136 638 L2160 640 L2184 642 L2208 645 L2232 648 L2256 651 L2280 654 L2304 658 L2328 662 L2352 667 L2376 672 L2400 677 L2424 682 L2448 688 L2472 694 L2496 699 L2520 701"/></defs>
+      <text class="r0"><textPath href="#fw0" startOffset="2.5%">CLARITY IN LENDING. CERTAINTY OF EXECUTION.</textPath></text>
       <text class="r1"><textPath href="#fw1" id="ft1" startOffset="9%">A FULL-SERVICE COMMERCIAL REAL ESTATE FINANCE, EQUITY AND ADVISORY FIRM.</textPath></text>
       <text class="r2"><textPath href="#fw2" id="ft2" startOffset="15%">PROVIDING UNPARALLELED ACCESS TO CAPITAL ACROSS EVERY ASSET CLASS.</textPath></text>
     </svg>
@@ -1716,19 +1721,19 @@ html.e-pre,html.e-pre body{overflow:hidden}
       var tl = gsap.timeline({defaults:{ease:"power4.out"}});
       if (ldr && pre){
         var sail = document.getElementById("ldrSail"), n = document.getElementById("ldrN"), k = 0;
-        var hues = ["#FFFFFF", "#9AD1FF", "#2E7BC0", "#EEF3F7", "#6FC3FF", "#C9D0D6", "#5A9BD6"];
-        var cyc = setInterval(function(){ k = (k + 1) % hues.length; sail.style.background = hues[k]; }, 150);
+        var pics = sail.querySelectorAll("img"); pics[0].classList.add("on");
+        var cyc = setInterval(function(){ pics[k].classList.remove("on"); k = (k + 1) % pics.length; pics[k].classList.add("on"); }, 300);
         var c = {v:0};
         tl.to(c, {v:100, duration:2.3, ease:"power1.inOut", onUpdate:function(){ n.textContent = String(Math.round(c.v)).padStart(3, "0"); }})
-          .add(function(){ clearInterval(cyc); sail.style.background = "#fff"; })
-          .to(sail, {scale:1.6, opacity:0, duration:.7, ease:"power3.in"}, "+=.08")
+          .add(function(){ clearInterval(cyc); })
+          .to(sail, {scale:1.25, opacity:0, duration:.7, ease:"power3.in"}, "+=.08")
           .to(".ldr-n, .ldr-cap", {opacity:0, duration:.45, ease:"power2.in"}, "<.1")
           .add(function(){ ldr.remove(); document.documentElement.classList.remove("e-pre"); });
       } else if (ldr){ ldr.remove(); }
       if (location.hash !== "#still") tl
         .fromTo(".f-mark", {clipPath:"inset(0 100% 0 0)"}, {clipPath:"inset(0 0% 0 0)", duration:1.5, ease:"power4.inOut", clearProps:"clipPath"}, pre ? "-=.3" : .15)
-        .from(".f-refl text", {opacity:0, y:14, duration:1.1, stagger:.12}, "-=.5")
-        .from(".f-tag, .f-top10, .f-links, .f-scroll, #hdr .hv-brand, #hdr .menu a, #hdr .pill", {opacity:0, y:12, duration:.9, stagger:.05}, "-=.9")
+        .from(".f-refl .r1, .f-refl .r2", {opacity:0, y:14, duration:1.1, stagger:.12}, "-=.5")
+        .from(".f-top10, .f-links, .f-scroll, #hdr .hv-brand, #hdr .menu a, #hdr .pill", {opacity:0, y:12, duration:.9, stagger:.05}, "-=.9")
         .add(function(){ if (window.__fSweep) window.__fSweep(); }, "-=.9")
         .from(".tkr", {opacity:0, y:22, duration:1, ease:"power3.out"}, "-=.5");
       /* the reflection drifts, slowly, in opposite directions */
