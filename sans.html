@@ -870,7 +870,6 @@ html.e-pre,html.e-pre body{overflow:hidden}
   </h1>
   <p class="f-lede">A full-service commercial real estate finance, equity and advisory firm. Providing unparalleled access to capital across every asset class.</p>
   <p class="f-top10"><i></i><b>Top 10 HUD lender</b><span>Harborview and its partners · since 2013</span></p>
-  <nav class="f-links" aria-label="Quick links"><a href="#transactions">Closed deals</a><span>/</span><a href="#directory">Directory</a></nav>
   <div class="f-scroll" aria-hidden="true"><i></i>Scroll</div>
 </section>
 <section class="f-rates" aria-label="Live interest rates">
@@ -1729,7 +1728,7 @@ html.e-pre,html.e-pre body{overflow:hidden}
       if (location.hash !== "#still") tl
         .fromTo(".f-mark", {clipPath:"inset(0 100% 0 0)"}, {clipPath:"inset(0 0% 0 0)", duration:1.5, ease:"power4.inOut", clearProps:"clipPath"}, pre ? "-=.3" : .15)
         .from(".f-refl .r1, .f-refl .r2", {opacity:0, y:14, duration:1.1, stagger:.12}, "-=.5")
-        .from(".f-top10, .f-links, .f-scroll, #hdr .hv-brand, #hdr .menu a, #hdr .pill", {opacity:0, y:12, duration:.9, stagger:.05}, "-=.9")
+        .from(".f-top10, .f-scroll, #hdr .hv-brand, #hdr .menu a, #hdr .pill", {opacity:0, y:12, duration:.9, stagger:.05}, "-=.9")
         .add(function(){ if (window.__fSweep) window.__fSweep(); }, "-=.9")
         .from(".tkr", {opacity:0, y:22, duration:1, ease:"power3.out"}, "-=.5");
       /* the reflection drifts, slowly, in opposite directions */
