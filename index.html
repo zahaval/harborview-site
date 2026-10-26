@@ -759,15 +759,9 @@ header .nav-cta{justify-self:end}
 .ldr{position:fixed;inset:0;z-index:400;background:var(--deep);display:none;align-items:center;justify-content:center}
 html.e-pre .ldr{display:flex}
 html.e-pre,html.e-pre body{overflow:hidden}
-.ldr-word{display:flex;align-items:center;gap:clamp(16px,2.4vw,40px);height:clamp(110px,17vw,250px)}
-.ldr-l{display:block;height:100%;background:#fff;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
-.ldr-h{--m:url(img/ldr-H.png);aspect-ratio:165/445}
-.ldr-p{--m:url(img/ldr-P.png);aspect-ratio:162/445}
-/* the C is a porthole: the harbor photos cycle inside its stroke */
-.ldr-o{position:relative;height:100%;aspect-ratio:366/445;background:#0F2C4A;
-  -webkit-mask:url(img/ldr-C.png) center/contain no-repeat;mask:url(img/ldr-C.png) center/contain no-repeat}
-.ldr-o img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
-.ldr-o img.on{opacity:1}
+.ldr-sail{width:clamp(96px,11vw,150px);aspect-ratio:442/510;background:#fff;
+  -webkit-mask:url(img/hv-icon-white.svg) center/contain no-repeat;mask:url(img/hv-icon-white.svg) center/contain no-repeat;
+  filter:drop-shadow(0 10px 40px rgba(0,0,0,.4))}
 .ldr-n{position:absolute;left:50%;bottom:clamp(22px,4.5vh,44px);transform:translateX(-50%);
   font-family:var(--sans);font-size:12.5px;letter-spacing:.24em;color:var(--fog2);font-variant-numeric:tabular-nums}
 .ldr-cap{position:absolute;left:var(--g);top:calc(var(--g) + 10px);margin:0;font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,208,214,.55)}
@@ -792,15 +786,6 @@ html.e-pre,html.e-pre body{overflow:hidden}
 .f-refl text{font-family:"Abel","Archivo Narrow",sans-serif;font-size:52px;letter-spacing:.14em;fill:#fff}
 .f-refl .r1{opacity:.82}
 .f-refl .r2{opacity:.55}
-
-/* the cursor is the sail — on every screen of the page */
-.f-lens{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:500;display:grid;place-items:center;transform:translate(-9999px,-9999px);transition:opacity .2s}
-.f-lens img{grid-area:1/1;width:clamp(22px,2vw,30px);height:auto;filter:drop-shadow(0 2px 10px rgba(8,28,49,.55))}
-.f-lens .lt{display:none}
-.f-lens.light .lw{display:none}
-.f-lens.light .lt{display:block;filter:drop-shadow(0 2px 8px rgba(255,255,255,.6))}
-@media (hover:hover){html.sail,html.sail *{cursor:none!important} html.sail input,html.sail textarea,html.sail select{cursor:auto!important}}
-@media (hover:none){.f-lens{display:none}}
 
 .f-tag{position:absolute;left:var(--g);top:calc(88px + 14px);margin:0;z-index:3;pointer-events:none;
   font-family:var(--sans);font-size:clamp(15px,1.3vw,20px);line-height:1.22;color:#fff}
@@ -836,7 +821,6 @@ html.e-pre,html.e-pre body{overflow:hidden}
     document.documentElement.classList.add("e-pre");
     setTimeout(function(){ document.documentElement.classList.remove("e-pre"); }, 7000);
   }
-  if (matchMedia("(hover:hover)").matches) document.documentElement.classList.add("sail");
 </script>
 </head>
 <body>
@@ -868,16 +852,9 @@ html.e-pre,html.e-pre body{overflow:hidden}
 <!-- ═════════ HERO ═════════ -->
 <div class="ldr" id="ldr" aria-hidden="true">
   <p class="ldr-cap">Harborview Capital Partners</p>
-  <div class="ldr-word">
-    <span class="ldr-l ldr-h"></span>
-    <span class="ldr-o">
-      <img src="img/crop-boats.webp" alt=""><img src="img/crop-lighthouse.webp" alt=""><img src="img/crop-water.webp" alt=""><img src="img/crop-birds.webp" alt=""><img src="img/harbor-detail-1200.webp" alt=""><img src="img/miami-marina-900.webp" alt="">
-    </span>
-    <span class="ldr-l ldr-p"></span>
-  </div>
+  <div class="ldr-sail" id="ldrSail"></div>
   <div class="ldr-n" id="ldrN">000</div>
 </div>
-<div class="f-lens" id="fLens" aria-hidden="true"><img class="lw" src="img/hv-icon-white.svg" alt="" width="442" height="510"><img class="lt" src="img/hv-icon.svg" alt="" width="442" height="510"></div>
 <section class="hero hero-f" id="top">
   <p class="f-tag">Clarity in lending.<br>Certainty of execution.</p>
   <h1 class="f-mark" id="fMark" aria-label="Harborview Capital Partners">
@@ -890,7 +867,7 @@ html.e-pre,html.e-pre body{overflow:hidden}
     </svg>
   </h1>
   <p class="f-lede">A full-service commercial real estate finance, equity and advisory firm. Providing unparalleled access to capital across every asset class.</p>
-  <p class="f-top10"><i></i><b>Top 10 HUD lender</b><span>in the country · since 2013</span></p>
+  <p class="f-top10"><i></i><b>Top 10 HUD lender</b><span>Harborview and its partners · since 2013</span></p>
   <nav class="f-links" aria-label="Quick links"><a href="#transactions">Closed deals</a><span>/</span><a href="#directory">Directory</a></nav>
   <div class="f-scroll" aria-hidden="true"><i></i>Scroll</div>
 </section>
@@ -1691,10 +1668,10 @@ html.e-pre,html.e-pre body{overflow:hidden}
   })();
 
 
-  /* ── Draft F: the cursor is the sail, page-wide; inside the hero the marina shows through the letters around it ── */
+  /* ── Draft F: the marina shows through the letters around the pointer ── */
   (function(){
-    var hero = document.querySelector(".hero-f"), mark = document.getElementById("fMark"), lens = document.getElementById("fLens");
-    if (!hero || !mark || !lens || !window.gsap) return;
+    var hero = document.querySelector(".hero-f"), mark = document.getElementById("fMark");
+    if (!hero || !mark || !window.gsap) return;
     var still = matchMedia("(prefers-reduced-motion: reduce)").matches || location.hash === "#still";
     var pos = {x:-9999, y:-9999}, sweep = null, lx = null, ly = null;
     var tx = gsap.quickTo(pos, "x", {duration:.45, ease:"power3"}), ty = gsap.quickTo(pos, "y", {duration:.45, ease:"power3"});
@@ -1703,15 +1680,10 @@ html.e-pre,html.e-pre body{overflow:hidden}
       var mb = mark.getBoundingClientRect();
       mark.style.setProperty("--mx", (pos.x - mb.left) + "px");
       mark.style.setProperty("--my", (pos.y - mb.top) + "px");
-      lens.style.transform = "translate(" + pos.x + "px," + pos.y + "px)";
-      var el = document.elementFromPoint(pos.x, pos.y);
-      lens.classList.toggle("light", !!(el && el.closest(".on-light")));
-      lens.style.opacity = (el && el.matches("input,textarea,select")) ? 0 : 1;
     });
     function startSweep(){                      /* drifts across the word until a pointer shows up (always, on touch screens) */
       if (still || sweep) return;
-      var hb = hero.getBoundingClientRect(), mb = mark.getBoundingClientRect();
-      var y0 = mb.top + mb.height * .42, amp = mb.height * .22, o = {t:0};
+      var hb = hero.getBoundingClientRect(), mb = mark.getBoundingClientRect(), amp = mb.height * .22, o = {t:0};
       sweep = gsap.to(o, {t:1, duration:14, ease:"none", repeat:-1, yoyo:true, onUpdate:function(){
         var mb2 = mark.getBoundingClientRect();
         tx(hb.left - 120 + (hb.width + 240) * o.t); ty(mb2.top + mb2.height * .42 + Math.sin(o.t * Math.PI * 2.2) * amp);
@@ -1722,8 +1694,6 @@ html.e-pre,html.e-pre body{overflow:hidden}
       if (sweep){ sweep.kill(); sweep = null; }
       tx(e.clientX); ty(e.clientY);
     }, {passive:true});
-    document.addEventListener("mouseleave", function(){ lens.style.opacity = 0; });
-    document.addEventListener("mouseenter", function(){ lens.style.opacity = 1; });
     window.__fSweep = startSweep;
     if (still){ var mb = mark.getBoundingClientRect(); pos.x = mb.left + mb.width * .62; pos.y = mb.top + mb.height * .4; }
   })();
@@ -1745,15 +1715,14 @@ html.e-pre,html.e-pre body{overflow:hidden}
       var ldr = document.getElementById("ldr"), pre = document.documentElement.classList.contains("e-pre");
       var tl = gsap.timeline({defaults:{ease:"power4.out"}});
       if (ldr && pre){
-        var pics = ldr.querySelectorAll(".ldr-o img"), n = document.getElementById("ldrN"), k = 0;
-        pics[0].classList.add("on");
-        var cyc = setInterval(function(){ pics[k].classList.remove("on"); k = (k + 1) % pics.length; pics[k].classList.add("on"); }, 360);
+        var sail = document.getElementById("ldrSail"), n = document.getElementById("ldrN"), k = 0;
+        var hues = ["#FFFFFF", "#9AD1FF", "#2E7BC0", "#EEF3F7", "#6FC3FF", "#C9D0D6", "#5A9BD6"];
+        var cyc = setInterval(function(){ k = (k + 1) % hues.length; sail.style.background = hues[k]; }, 150);
         var c = {v:0};
         tl.to(c, {v:100, duration:2.3, ease:"power1.inOut", onUpdate:function(){ n.textContent = String(Math.round(c.v)).padStart(3, "0"); }})
-          .add(function(){ clearInterval(cyc); })
-          .to(".ldr-h", {xPercent:-160, opacity:0, duration:.75, ease:"power3.in"}, "+=.08")
-          .to(".ldr-p", {xPercent:160, opacity:0, duration:.75, ease:"power3.in"}, "<")
-          .to(".ldr-o, .ldr-n, .ldr-cap", {opacity:0, scale:.82, duration:.55, ease:"power2.in"}, "<.08")
+          .add(function(){ clearInterval(cyc); sail.style.background = "#fff"; })
+          .to(sail, {scale:1.6, opacity:0, duration:.7, ease:"power3.in"}, "+=.08")
+          .to(".ldr-n, .ldr-cap", {opacity:0, duration:.45, ease:"power2.in"}, "<.1")
           .add(function(){ ldr.remove(); document.documentElement.classList.remove("e-pre"); });
       } else if (ldr){ ldr.remove(); }
       if (location.hash !== "#still") tl
